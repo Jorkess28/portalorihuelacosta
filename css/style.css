@@ -1,0 +1,73 @@
+/* --- CONFIGURACIÓN DE NÚCLEO --- */
+:root {
+    --neon-cyan: #00f2ff;
+    --neon-red: #ff0000;
+    --glass: rgba(255, 255, 255, 0.03);
+    --night-amber: #ff9900;
+}
+
+body {
+    background-color: #050505;
+    transition: background-color 1.5s ease, color 1.5s ease;
+    min-height: 100vh;
+}
+
+/* --- ESTILOS NEÓN Y CRISTAL --- */
+.neon-cyan {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.glass-dark {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- ANIMACIÓN DEL TICKER (TELETIPO) --- */
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+    display: flex;
+    animation: ticker 25s linear infinite;
+    width: fit-content;
+}
+
+.animate-ticker:hover {
+    animation-play-state: paused;
+}
+
+/* --- MODO NOCHE (AMBER PROTOCOL) --- */
+body.night-mode {
+    background-color: #0d0900;
+}
+
+body.night-mode .neon-cyan {
+    color: var(--night-amber);
+    text-shadow: 0 0 10px var(--night-amber);
+}
+
+body.night-mode .border-cyan-500 {
+    border-color: var(--night-amber) !important;
+}
+
+/* --- EFECTO DE CARTAS DE EMPLEO --- */
+.job-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-cyan);
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+    .animate-ticker {
+        animation-duration: 15s;
+    }
+}
