@@ -71,3 +71,13 @@ body.night-mode .border-cyan-500 {
         animation-duration: 15s;
     }
 }
+/* Filtro para las imágenes del portal */
+.job-card img, .hero-bg {
+    filter: saturate(1.2) contrast(1.1);
+}
+
+/* Animación de la marquesina de noticias con estilo azul mar */
+.animate-ticker {
+    color: #00f2ff; /* Cian neón */
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
