@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orihuela Costa 2026 | Portal de Empleo Proactivo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-200 overflow-x-hidden">
+
+    <header class="fixed top-0 w-full z-50 glass-dark border-b border-cyan-900/50 px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(0,242,255,0.5)]">
+                <i class="fas fa-terminal text-black"></i>
+            </div>
+            <div>
+                <h1 class="text-sm font-black tracking-[0.2em] neon-cyan">ORIHUELA_COSTA_NET</h1>
+                <p class="text-[9px] text-gray-500 font-mono" id="current-time">CARGANDO_SISTEMA...</p>
+            </div>
+        </div>
+
+        <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase">
+            <a href="#" class="hover:text-cyan-400 transition-colors">Inicio</a>
+            <a href="#" class="hover:text-cyan-400 transition-colors">Red_Local</a>
+            <a href="#" onclick="toggleManualNightMode()" class="text-amber-500 border border-amber-900 px-2 py-1 rounded hover:bg-amber-900/20">Modo_Noche</a>
+        </nav>
+
+        <button onclick="openProfileConfig()" class="group flex items-center gap-3 bg-white/5 hover:bg-white/10 p-1 pr-4 rounded-full transition-all border border-white/10">
+            <div id="profile-icon" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
+                <i class="fas fa-user-ghost text-xs"></i>
+            </div>
+            <div class="text-left">
+                <p class="text-[9px] text-gray-500 leading-none">CANDIDATO</p>
+                <p id="profile-name" class="text-[10px] font-bold text-white uppercase">Gestionar Perfil</p>
+            </div>
+        </button>
+    </header>
+
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        
+        <div class="mb-12 overflow-hidden whitespace-nowrap border-y border-white/5 py-2">
+            <div class="animate-ticker flex gap-20 items-center">
+                <span class="text-xs font-mono text-cyan-800"><i class="fas fa-circle text-[6px] mr-2"></i> NUEVA OFERTA: RECEPCIONISTA (LA ZENIA)</span>
+                <span class="text-xs font-mono text-cyan-800"><i class="fas fa-circle text-[6px] mr-2"></i> ALERTA: FERIA DE EMPLEO JUNIO 2026</span>
+                <span class="text-xs font-mono text-cyan-800"><i class="fas fa-circle text-[6px] mr-2"></i> SISTEMA 1-CLICK ACTUALIZADO</span>
+            </div>
+        </div>
+
+        <section class="mb-12">
+            <div class="flex flex-wrap gap-4">
+                <button onclick="filterJobs('todos')" class="filter-btn px-6 py-2 border border-cyan-500 text-cyan-500 text-[10px] font-bold rounded-full hover:bg-cyan-500/10 transition-all uppercase">Todos</button>
+                <button onclick="filterJobs('hosteleria')" class="filter-btn px-6 py-2 border border-gray-800 text-gray-500 text-[10px] font-bold rounded-full hover:border-cyan-500 transition-all uppercase">Hostelería</button>
+                <button onclick="filterJobs('servicios')" class="filter-btn px-6 py-2 border border-gray-800 text-gray-500 text-[10px] font-bold rounded-full hover:border-cyan-500 transition-all uppercase">Servicios</button>
+            </div>
+        </section>
+
+        <section id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="job-card glass-dark rounded-[2rem] p-8 border border-white/5 relative overflow-hidden group" data-category="hosteleria">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="text-[9px] bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full font-bold tracking-tighter">HOSTELERÍA</span>
+                    <span class="text-xs font-mono text-gray-600">ID: #8821</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Camarero/a de Terraza</h3>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed">Restaurante en Cabo Roig busca personal para temporada de verano. Inglés fluido necesario.</p>
+                <button onclick="handleJobApplication('Camarero/a de Terraza')" class="w-full py-4 bg-white/5 rounded-2xl font-black text-[10px] tracking-widest hover:bg-cyan-600 hover:text-white transition-all border border-white/5">
+                    POSTULACIÓN_1-CLICK
+                </button>
+            </div>
+
+            <div class="job-card glass-dark rounded-[2rem] p-8 border border-white/5 relative overflow-hidden group" data-category="servicios">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="text-[9px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full font-bold tracking-tighter">SERVICIOS</span>
+                    <span class="text-xs font-mono text-gray-600">ID: #9012</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Mantenimiento Web</h3>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed">Soporte técnico para inmobiliaria local. Trabajo remoto parcial. Conocimientos en WordPress.</p>
+                <button onclick="handleJobApplication('Mantenimiento Web')" class="w-full py-4 bg-white/5 rounded-2xl font-black text-[10px] tracking-widest hover:bg-cyan-600 hover:text-white transition-all border border-white/5">
+                    POSTULACIÓN_1-CLICK
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="profile-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-6"></div>
+    <div id="alert-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-6"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/jobs.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
