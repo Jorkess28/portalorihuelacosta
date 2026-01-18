@@ -3,163 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orihuela Costa 2026 | Portal de Empleo Proactivo</title>
+    <title>Orihuela Costa 2026 | Portal de Empleo Paradise</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-magenta: #bc13fe;
+            --glass-bg: rgba(10, 15, 25, 0.8);
+        }
+
+        body {
+            background-color: #050a0f;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .neon-text {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.7);
+        }
+
+        .glass-dark {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(5, 10, 15, 0.2), #050a0f);
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+
+        .animate-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
-<body class="text-gray-200 overflow-x-hidden">
+<body class="overflow-x-hidden">
 
-    <header class="fixed top-0 w-full z-50 glass-dark border-b border-cyan-900/50 px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center gap-4">
+    <header class="fixed top-0 w-full z-50 glass-dark px-6 py-4 flex justify-between items-center border-b border-cyan-900/30">
+        <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(0,242,255,0.5)]">
-                <i class="fas fa-terminal text-black"></i>
+                <i class="fas fa-umbrella-beach text-black"></i>
             </div>
-            <div>
-                <h1 class="text-sm font-black tracking-[0.2em] neon-cyan">ORIHUELA_COSTA_NET</h1>
-                <p class="text-[9px] text-gray-500 font-mono" id="current-time">CARGANDO_SISTEMA...</p>
-            </div>
+            <h1 class="text-lg font-black tracking-tighter neon-text uppercase">Orihuela_Costa_2026</h1>
         </div>
-
-        <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase">
-            <a href="#" class="hover:text-cyan-400 transition-colors">Inicio</a>
-            <a href="#" class="hover:text-cyan-400 transition-colors">Red_Local</a>
-            <a href="#" onclick="toggleManualNightMode()" class="text-amber-500 border border-amber-900 px-2 py-1 rounded hover:bg-amber-900/20">Modo_Noche</a>
+        <nav class="hidden md:flex gap-6 text-[11px] font-bold uppercase tracking-widest">
+            <a href="#" class="hover:text-cyan-400 transition-colors">Ofertas</a>
+            <a href="#" class="hover:text-cyan-400 transition-colors">Playas</a>
+            <a href="#" class="text-magenta-500 border border-magenta-500/50 px-3 py-1 rounded">Zona Premium</a>
         </nav>
-<section id="costa-premium" class="py-20 bg-background relative overflow-hidden">
-  <div class="absolute top-0 left-0 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[120px]"></div>
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-neon-magenta/10 rounded-full blur-[120px]"></div>
-
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold neon-text mb-4 uppercase tracking-tighter">Explora el Paraíso</h2>
-      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">Trabaja donde otros vacacionan. Orihuela Costa ofrece 16km de costa con banderas azules y oportunidades únicas.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <div class="glass-card border border-border/30 rounded-3xl overflow-hidden hover-neon transition-all group">
-        <div class="h-48 overflow-hidden relative">
-          <img src="https://images.unsplash.com/photo-1506929194291-dd0929913931?q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Cabo Roig">
-          <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-neon-cyan border border-neon-cyan/50">ZONA ELITE</div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2 text-foreground">Cabo Roig</h3>
-          <p class="text-sm text-muted-foreground mb-4">El corazón náutico de la costa. Alta demanda en hostelería de lujo y mantenimiento náutico.</p>
-          <div class="flex items-center text-neon-magenta text-xs font-mono">
-            <i class="fas fa-briefcase mr-2"></i> 24 VACANTES ACTIVAS
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-card border border-border/30 rounded-3xl overflow-hidden hover-neon transition-all group">
-        <div class="h-48 overflow-hidden relative">
-          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="La Zenia">
-          <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-neon-magenta border border-neon-magenta/50">CENTRO COMERCIAL</div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2 text-foreground">La Zenia</h3>
-          <p class="text-sm text-muted-foreground mb-4">Punto neurálgico del comercio. Ideal para perfiles de retail, ventas y servicios al cliente.</p>
-          <div class="flex items-center text-neon-cyan text-xs font-mono">
-            <i class="fas fa-briefcase mr-2"></i> 45 VACANTES ACTIVAS
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-card border border-border/30 rounded-3xl overflow-hidden hover-neon transition-all group">
-        <div class="h-48 overflow-hidden relative">
-          <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Playa Flamenca">
-          <div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white border border-white/20">ADMINISTRACIÓN</div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2 text-foreground">Playa Flamenca</h3>
-          <p class="text-sm text-muted-foreground mb-4">Sede del ayuntamiento y servicios públicos. Buscamos perfiles administrativos y de servicios.</p>
-          <div class="flex items-center text-white text-xs font-mono">
-            <i class="fas fa-briefcase mr-2"></i> 12 VACANTES ACTIVAS
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-        <button onclick="openProfileConfig()" class="group flex items-center gap-3 bg-white/5 hover:bg-white/10 p-1 pr-4 rounded-full transition-all border border-white/10">
-            <div id="profile-icon" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
-                <i class="fas fa-user-ghost text-xs"></i>
-            </div>
-            <div class="text-left">
-                <p class="text-[9px] text-gray-500 leading-none">CANDIDATO</p>
-                <p id="profile-name" class="text-[10px] font-bold text-white uppercase">Gestionar Perfil</p>
-            </div>
-        </button>
     </header>
 
-    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        
-        <div class="mb-12 overflow-hidden whitespace-nowrap border-y border-white/5 py-2">
-            <div class="animate-ticker flex gap-20 items-center">
-                <span class="text-xs font-mono text-cyan-800"><i class="fas fa-circle text-[6px] mr-2"></i> NUEVA OFERTA: RECEPCIONISTA (LA ZENIA)</span>
-                <span class="text-xs font-mono text-cyan-800"><i class="fas fa-circle text-[6px] mr-2"></i> ALERTA: FERIA DE EMPLEO JUNIO 2026</span>
-                <span class="text-xs font-mono text-cyan-800"><i class="fas fa-circle text-[6px] mr-2"></i> SISTEMA 1-CLICK ACTUALIZADO</span>
-            </div>
+    <section class="relative h-[80vh] flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80" 
+                 class="w-full h-full object-cover opacity-50" alt="Costa">
+            <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
-        <section class="mb-12">
-            <div class="flex flex-wrap gap-4">
-                <button onclick="filterJobs('todos')" class="filter-btn px-6 py-2 border border-cyan-500 text-cyan-500 text-[10px] font-bold rounded-full hover:bg-cyan-500/10 transition-all uppercase">Todos</button>
-                <button onclick="filterJobs('hosteleria')" class="filter-btn px-6 py-2 border border-gray-800 text-gray-500 text-[10px] font-bold rounded-full hover:border-cyan-500 transition-all uppercase">Hostelería</button>
-                <button onclick="filterJobs('servicios')" class="filter-btn px-6 py-2 border border-gray-800 text-gray-500 text-[10px] font-bold rounded-full hover:border-cyan-500 transition-all uppercase">Servicios</button>
+        <div class="relative z-10 text-center px-4">
+            <span class="px-4 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 text-[10px] font-bold tracking-[0.4em] uppercase mb-6 inline-block">
+                Tu futuro frente al Mediterráneo
+            </span>
+            <h2 class="text-6xl md:text-8xl font-black text-white mb-4 tracking-tighter">TRABAJA EN EL <br><span class="neon-text italic">PARAÍSO</span></h2>
+            <div class="flex justify-center gap-4 mt-8">
+                <button class="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">Ver Ofertas</button>
+                <button class="glass-dark text-white px-8 py-3 rounded-full font-bold border border-white/20 hover:bg-white/10 transition-all">Explorar Costa</button>
             </div>
-        </section>
-
-        <section id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="job-card glass-dark rounded-[2rem] p-8 border border-white/5 relative overflow-hidden group" data-category="hosteleria">
-                <div class="flex justify-between items-start mb-6">
-                    <span class="text-[9px] bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full font-bold tracking-tighter">HOSTELERÍA</span>
-                    <span class="text-xs font-mono text-gray-600">ID: #8821</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Camarero/a de Terraza</h3>
-                <p class="text-gray-500 text-sm mb-6 leading-relaxed">Restaurante en Cabo Roig busca personal para temporada de verano. Inglés fluido necesario.</p>
-                <button onclick="handleJobApplication('Camarero/a de Terraza')" class="w-full py-4 bg-white/5 rounded-2xl font-black text-[10px] tracking-widest hover:bg-cyan-600 hover:text-white transition-all border border-white/5">
-                    POSTULACIÓN_1-CLICK
-                </button>
-            </div>
-
-            <div class="job-card glass-dark rounded-[2rem] p-8 border border-white/5 relative overflow-hidden group" data-category="servicios">
-                <div class="flex justify-between items-start mb-6">
-                    <span class="text-[9px] bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full font-bold tracking-tighter">SERVICIOS</span>
-                    <span class="text-xs font-mono text-gray-600">ID: #9012</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Mantenimiento Web</h3>
-                <p class="text-gray-500 text-sm mb-6 leading-relaxed">Soporte técnico para inmobiliaria local. Trabajo remoto parcial. Conocimientos en WordPress.</p>
-                <button onclick="handleJobApplication('Mantenimiento Web')" class="w-full py-4 bg-white/5 rounded-2xl font-black text-[10px] tracking-widest hover:bg-cyan-600 hover:text-white transition-all border border-white/5">
-                    POSTULACIÓN_1-CLICK
-                </button>
-            </div>
-        </section>
-    </main>   <section class="max-w-7xl mx-auto px-6 mb-20">
-    <div class="glass-dark rounded-[2rem] p-8 border border-white/5 overflow-hidden">
-        <h2 class="text-xl font-bold mb-6 neon-cyan uppercase tracking-widest"><i class="fas fa-map-marker-alt mr-2"></i> Centro de Operaciones Local</h2>
-        <div class="w-full h-80 rounded-2xl overflow-hidden border border-cyan-900/30">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12563.82915682613!2d-0.7275460871582031!3d37.93132640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63a033282299df%3A0x6a21e42880c51e06!2sZenia%20Boulevard!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
-                width="100%" 
-                height="100%" 
-                style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(95%);" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
         </div>
-        <p class="mt-4 text-[10px] text-gray-500 font-mono text-center">LOCALIZACIÓN: ORIHUELA COSTA, ALICANTE, SPAIN // COORD_37.93N_0.72W</p>
+    </section>
+
+    <div class="bg-cyan-950/30 border-y border-cyan-900/50 py-3 overflow-hidden">
+        <div class="animate-ticker text-[11px] font-mono text-cyan-400 uppercase tracking-widest">
+            +++ Nueva oferta: Socorrista Playa Flamenca +++ Apertura Chiringuito Cabo Roig +++ Feria de empleo Junio 2026 +++ 120 puestos disponibles +++
+        </div>
     </div>
-</section>
 
-    <div id="profile-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-6"></div>
-    <div id="alert-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-6"></div>
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <h3 class="text-2xl font-bold mb-12 flex items-center gap-4">
+            <span class="w-12 h-[1px] bg-cyan-500"></span>
+            ZONAS DE EMPLEO DESTACADAS
+        </h3>
 
-    <script src="js/main.js"></script>
-    <script src="js/jobs.js"></script>
-    <script src="js/profile.js"></script>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="job-card glass-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1506929194291-dd0929913931?q=80&w=600" class="h-48 w-full object-cover" alt="La Zenia">
+                <div class="p-8">
+                    <span class="text-[10px] text-cyan-500 font-bold tracking-widest uppercase">Comercio</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">La Zenia Boulevard</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">El centro comercial abierto más grande de la zona. Buscamos retail managers y personal de tienda.</p>
+                    <a href="#" class="text-cyan-400 text-xs font-bold hover:underline italic">EXPLORAR ZONA →</a>
+                </div>
+            </div>
+
+            <div class="job-card glass-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=600" class="h-48 w-full object-cover" alt="Cabo Roig">
+                <div class="p-8">
+                    <span class="text-[10px] text-purple-500 font-bold tracking-widest uppercase">Hostelería</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">Cabo Roig / Nautical</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Famoso por su puerto y restauración de alta gama. Ofertas en cocina y servicios náuticos.</p>
+                    <a href="#" class="text-purple-400 text-xs font-bold hover:underline italic">EXPLORAR ZONA →</a>
+                </div>
+            </div>
+
+            <div class="job-card glass-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?q=80&w=600" class="h-48 w-full object-cover" alt="Golf">
+                <div class="p-8">
+                    <span class="text-[10px] text-green-500 font-bold tracking-widest uppercase">Turismo Elite</span>
+                    <h4 class="text-xl font-bold mt-2 mb-4">Villamartín Golf</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Campos de golf de prestigio internacional. Buscamos staff para clubs y mantenimiento.</p>
+                    <a href="#" class="text-green-400 text-xs font-bold hover:underline italic">EXPLORAR ZONA →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="max-w-7xl mx-auto px-6 mb-20">
+        <div class="glass-dark rounded-[2rem] p-8">
+            <h2 class="text-xl font-bold mb-6 neon-text uppercase tracking-widest"><i class="fas fa-map-marker-alt mr-2"></i> Ubicación del Centro de Empleo</h2>
+            <div class="w-full h-80 rounded-2xl overflow-hidden border border-cyan-900/30">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12563.882470712!2d-0.7289552!3d37.9255734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd641a27e7048737%3A0xc3f60f064f7b600d!2sZenia%20Boulevard!5e0!3m2!1ses!2ses!4v1700000000000" 
+                        width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(95%);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5 text-[10px] text-gray-600 font-mono tracking-widest">
+        ORIHUELA COSTA PROJECT © 2026 // DESIGNED BY JORKESS28
+    </footer>
+
 </body>
 </html>
